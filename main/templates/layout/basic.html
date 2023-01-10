@@ -1,0 +1,86 @@
+{% load bootstrap4 %} 
+{% load static %}
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Чтобы правильно обработать страницу -->
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <title>{% block title %}Главная{% endblock %} - Доска объявлений</title>
+        <!-- Привязываем страницу стилей -->
+        {% bootstrap_css %}
+        <link rel="stylesheet" type="text/css" 
+        href="{% static 'main/style.css' %}">
+        {% bootstrap_javascript jquery='slim' %} 
+    </head>
+    <body class="container-fluid"> 
+        <!-- mb-4 утсановит отступ снизу -->
+        <header class="mb-4">
+            <!-- стилевые классы выводят текст увеличенным шрифтом и выравнивают посередние -->
+            <h1 class="display-1 text-center">Объявления<h1> 
+        </header>
+        <!-- класс row, привязанный к элементу страницы, заставляет вести его как строка таблицы -->
+        <!-- а класс col - как ячейка в этой строке  -->
+        <div class="row">
+            <!-- Создаем строку с единственной ячейкой - маркированным списком,
+                для создания горизонтальной полосы навигации, привязав к нему класс nav
+                justify-content-end выравнивает пункты полосы по правому краю, border - создает рамку вокруг -->
+            <ul class="col nav justify-content-end border">
+                <!-- li с привязанным стилевым классом nav-item создает пункты полосы. Внутри гиперссылки с стилевым классом nav-link -->
+               
+                <!-- Код создает раскрывающиеся меню -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+                    role="button" aria-haspopup="true" aria-expanded="false">Профиль</a>
+                    <!-- Блок самого меню. dropdown-item - пункты меню-->
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Мои объявления</а>
+                        <a class="dropdown-item" href="#">Изменить личные данные</a>
+                        <a class="dropdown-item" href="#">Изменить пароль</a>
+                        <!-- dropdown-divider - создает разделитель между пунктами -->
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Выйти</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Удалить</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Регистрация</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Bxoд</a></li>
+            </ul>
+        </div>
+        <!-- табличная верстка из 2 ячеек: 1) левая панель навигации(nav) -->
+        <div class="row">
+            <!-- col привязываем к md-auto для соответствия ширины ячейки с ее содержимым 
+                nav flex-column - чтобы панель стала вертикальной -->
+            <nav class="col-md-auto nav flex-column border">
+                <a class="nav-link root" href="{% url 'main:index' %}">Главная</a>
+                <span class="nav-link root font-weight-bold">Недвижимость</span>
+                <a class="nav-link" href="#">Жильё</a>
+                <a class="nav-link" href="#">Склады</a>
+                <a class="nav-link" href="#">Гаражи</a>
+                <span class="nav-link root font-weight-bold" href="#">Транспорт</span>
+                <a class="nav-link" href="#">Легковой</a>
+                <a class="nav-link" href="#">Грузовой</a>
+            </nav>
+            <!-- 2) секция страницы контента (section) -->
+            <!-- py-2 установит внутренние отступы -->
+            <section class="col border py-2">
+                <!-- всплывающие окна -->
+                {% bootstrap_messages %} 
+                {% block content %}
+                {% endblock %}
+            </section>
+        </div>
+        <!-- поддон сайта(footer) -->
+        <!-- mt-3 внешний отступ  -->
+        <footer class="mt-3">
+            <p class="text-right font-italic">&copy; читатели.</p>
+        </footer>
+    </body>
+</html>
+
+
+
+
+
