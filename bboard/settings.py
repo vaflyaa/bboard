@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'bootstrap4',
 ]
 
+AUTH_USER_MODEL = 'main.AdvUser'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -78,7 +80,7 @@ WSGI_APPLICATION = 'bboard.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bboard_db',
+        'NAME': 'db_bboard',
         'HOST': 'localhost',
         'USER': 'postgres',
         'PASSWORD': 'dO55J6Nu'
