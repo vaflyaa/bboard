@@ -1,8 +1,9 @@
 from django.contrib import admin
 import datetime
 
-from .models import AdvUser
+from .models import AdvUser, SubRubric, SuperRubric
 from .utilities import send_activation_notification
+from .forms import SubRubricForm
 
 def send_activation_notifications(modeladmin, request, queryset):
     for rec in queryset:
@@ -48,5 +49,22 @@ class AdvUserAdmin(admin.ModelAdmin):
     readonly_fields = ('last_login', 'date_joined')
     actions = (send_activation_notifications, )
 
-
 admin.site.register(AdvUser, AdvUserAdmin)
+
+
+class SubRubricInline(admin.TabularInline):
+    model = SubRubric
+
+class SuperRubricAdmin(admin.ModelAdmin):
+    inlines = (SubRubricInline, )
+    exclude = ('super_rubric', )
+
+admin.site.register(SuperRubric, SuperRubricAdmin)
+
+
+class SubRubricAdmin(admin.ModelAdmin):
+    form = SubRubricForm
+
+admin.site.register(SubRubric, SubRubricAdmin)
+
+
