@@ -143,7 +143,7 @@ THUMBNAILS_ALIASES = {
     '': {
         'default': {
             'size': (96, 96),
-            'crop': 'scale',
+            'crop': 'smart',
         }
     }
 }

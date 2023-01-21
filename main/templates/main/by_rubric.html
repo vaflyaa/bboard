@@ -19,21 +19,24 @@
     </div>
 </div>
 {% if bbs %}
+<!-- перечень объявлений - маркированный список HTML -->
 <ul class="list-unstyled">
     {% for bb in bbs %}
+    <!-- Пункт списка6 my-5 - внешние отступы, p-3 - внутренние отступы-->
     <li class="media my-5 p-3 border">
+        <!-- гиперссылка на базе основной иллюстрации и названиии объявления -->
         {% url 'main:detail' rubric_pk=rubric.pk pk=bb.pk as url %}
         <a href="{{ url }}{{ all }}">
         {% if bb.image %}
         <img class="mr-3" src="{% thumbnail bb.image 'default' %}">
         {% else %}
-        <img class="mr-3" src="{% static 'main/empty.jpg' %}">
+        <img class="mr-3" src="{% static 'main/empty.png' %}">
         {% endif %}
         </a>
         <div class="media-body">
             <h3><a href="{{ url }}{{ all }}">{{ bb.title }}</a></h3>
             <div>{{ bb.content }}</div>
-            <p class="text-right font-weight-bold">{{ bb.price }}</p>
+            <p class="text-right font-weight-bold">{{ bb.price }} руб</p>
             <p class="text-right font-italic">{{ bb.created_at }}</p>
         </div>
     </li>
