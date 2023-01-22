@@ -28,7 +28,13 @@ def index(request):
     else:
         keyword = ''
     form = SearchForm(initial={'keyword': keyword})
-    context = {'bbs': bbs, 'form': form}
+    paginator = Paginator(bbs, 2)
+    if 'page' in request.GET:
+        page_num = request.GET['page']
+    else:
+        page_num = 1
+    page = paginator.get_page(page_num)
+    context = {'bbs': page.object_list, 'form': form, 'page': page}
     return render(request, 'main/index.html', context)
 
 # 

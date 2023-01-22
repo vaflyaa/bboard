@@ -3,6 +3,7 @@
 {% load thumbnail %}
 {% load static %}
 {% load bootstrap4 %}
+{% load humanize %}
 
 {% block title %}{{ rubric }}{% endblock %}
 
@@ -36,7 +37,7 @@
         <div class="media-body">
             <h3><a href="{{ url }}{{ all }}">{{ bb.title }}</a></h3>
             <div>{{ bb.content }}</div>
-            <p class="text-right font-weight-bold">{{ bb.price }} руб</p>
+            <p class="text-right font-weight-bold">{{ bb.price|intcomma }} руб</p>
             <p class="text-right font-italic">{{ bb.created_at }}</p>
         </div>
     </li>

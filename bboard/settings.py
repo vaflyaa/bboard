@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'django_cleanup',
     'easy_thumbnails',
+    'django.contrib.humanize',
 ]
 
 AUTH_USER_MODEL = 'main.AdvUser'
@@ -139,12 +140,12 @@ EMAIL_PORT = 1025
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-THUMBNAILS_ALIASES = {
+THUMBNAIL_ALIASES = {
     '': {
         'default': {
-            'size': (96, 96),
+            'size': (180, 120),
             'crop': 'smart',
         }
     }
 }
-THUMBNAILS_BASEDIR = 'thumbnails'
+THUMBNAIL_BASEDIR = 'thumbnails'
