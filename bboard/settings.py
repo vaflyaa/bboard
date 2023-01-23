@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_cleanup',
     'easy_thumbnails',
     'django.contrib.humanize',
+    'captcha',
 ]
 
 AUTH_USER_MODEL = 'main.AdvUser'
