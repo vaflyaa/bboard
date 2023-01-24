@@ -177,7 +177,7 @@ class BBLoginView(LoginView):
 class BBLogout(LoginRequiredMixin ,LogoutView):
     template_name = 'main/logout.html'
 
-# SuccessMessageMixin - для вывода всплывающих сообщений в случае успеха
+
 class ChangeUserInfoView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     model = AdvUser
     template_name = 'main/change_user_info.html'
