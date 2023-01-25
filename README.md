@@ -4,7 +4,7 @@ Were used in development:
 - MVC patern;
 - ORM technology;
 - Bootstrap4;
-- REST API;
+- DRF;
 - PostreSQL.
 
 
