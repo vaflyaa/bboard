@@ -1,6 +1,15 @@
-Web-service "BillBoard" as a pet-project. You can register, push your advertisement, comment it and find potential buyer. Include admin-site functional and user's profile.
+Web-service "BillBoard" as a pet-project. 
 
-Technologies used:
+## Functional
+- Admin site;
+- User's profile;
+- Email notifications;
+- Post an ad;
+- Left comments;
+- Form search;
+- Find potential buyer.
+
+## Technologies used:
 - MVC patern;
 - ORM technology;
 - Bootstrap4;
