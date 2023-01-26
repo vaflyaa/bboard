@@ -1,4 +1,4 @@
-Web-service "BillBoard" as a pet-project. 
+__Web-service "BillBoard" as a pet-project.__
 
 ## Functional
 - Admin site;
@@ -15,9 +15,6 @@ Web-service "BillBoard" as a pet-project.
 - Bootstrap4;
 - DRF;
 - PostreSQL.
-
-
-<img width="1117" alt="main" src="https://user-images.githubusercontent.com/100959752/214544978-5dfb922c-8dac-4bfb-a096-fa2490cacc1c.png">
 
 ## Setup virtual environment
 ```
@@ -38,3 +35,5 @@ python manage.py makemigrations
 ```
 python manage.py runserver
 ```
+
+<img width="1117" alt="main" src="https://user-images.githubusercontent.com/100959752/214544978-5dfb922c-8dac-4bfb-a096-fa2490cacc1c.png">
