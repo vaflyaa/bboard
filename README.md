@@ -19,6 +19,12 @@ source .venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
+## Make migratons
+```
+python manage.py migrate
+python manage.py makemigrations
+```
+
 ## Run local server
 ```
 python manage.py runserver
